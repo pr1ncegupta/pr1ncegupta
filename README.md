@@ -11,7 +11,7 @@ Currently, I am learning programming languages such as C, Java, and Python to fu
 I am looking for opportunities to collaborate on video editing and programming projects. If you have a project in mind and would like to collaborate, feel free to reach out to me on Instagram, where you can find me as @pr1ncegupta.
 
 ## How to Reach Me 📫
-You can find me on [Instagram]([url](https://www.instagram.com/pr1ncegupta)) and on [Twitter]([url](https://twitter.com/pr1ncegupta)). Feel free to reach out to me if you have any questions or would like to collaborate on a project. I'm always looking for new and exciting opportunities to learn and grow.
+You can find me on [Instagram]([https://instagram.com/pr1ncegupta] and on [Twitter]([https://twitter.com/pr1ncegupta]. Feel free to reach out to me if you have any questions or would like to collaborate on a project. I'm always looking for new and exciting opportunities to learn and grow.
 
 
 
