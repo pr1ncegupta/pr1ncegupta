@@ -13,7 +13,8 @@ I am looking for opportunities to collaborate on video editing and programming p
 ## How to Reach Me 📫
 You can find me on Instagram, Twitter as @pr1ncegupta. Feel free to reach out to me if you have any questions or would like to collaborate on a project. I'm always looking for new and exciting opportunities to learn and grow.
 
-
+[![Twitter Follow](https://img.shields.io/twitter/follow/pr1ncegupta?style=social)](https://twitter.com/pr1ncegupta)
+[![Instagram Follow](https://img.shields.io/instagram/follow/pr1ncegupta?style=social)](https://instagram.com/pr1ncegupta)
 
 
 
