@@ -7,7 +7,7 @@ My primary interest is video editing. I enjoy creating engaging and visually app
 ## What I'm Learning 🌱
 Currently, I am learning programming languages such as C, Java, and Python to further enhance my skills in software development. I am also learning various frameworks and libraries, such as React and Django, to help me create dynamic and interactive web applications.
 
-## What I'm Looking For 💞️
+## What I'm Looking For 🙌
 I am looking for opportunities to collaborate on video editing and programming projects. If you have a project in mind and would like to collaborate, feel free to reach out to me on Instagram, where you can find me as @pr1ncegupta.
 
 ## How to Reach Me 📫
