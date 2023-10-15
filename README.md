@@ -13,7 +13,7 @@ I am looking for opportunities to collaborate on video editing and programming p
 ## How to Reach Me 📫
 You can find me on Instagram and on Twitter @pr1ncegupta. Feel free to reach out to me if you have any questions or would like to collaborate on a project. I'm always looking for new and exciting opportunities to learn and grow.
 
-
+[![An image of @pr1ncegupta's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/pr1ncegupta)](https://holopin.io/@pr1ncegupta)
 
 
 
