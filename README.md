@@ -1,7 +1,7 @@
 <div align="center">
   
-<!-- Animated Header -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Prince%20Gupta&fontSize=42&fontColor=fff&animation=fadeIn&fontAlignY=32&desc=Tech%20%26%20Visual%20Storyteller&descAlignY=52&descSize=18" width="100%"/>
+<!-- Header Banner -->
+<img src="https://capsule-render.vercel.app/api?type=waving&height=180&color=0:0d1117,100:161b22&section=header&text=Prince%20Gupta&fontSize=42&fontColor=58a6ff&fontAlignY=35" width="100%"/>
 
 <!-- Typing Animation -->
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=true&repeat=false&random=false&width=600&height=80&lines=Building+at+the+intersection+of;AI+%E2%80%A2+Product+Design+%E2%80%A2+Storytelling" alt="Typing SVG" /></a>
