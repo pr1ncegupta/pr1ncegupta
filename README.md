@@ -8,7 +8,7 @@
 
 <br>
 
-<!-- Social Badges with Hover Animation -->
+<!-- Social Badges -->
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/pr1ncegupta)
 [![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/pr1ncegupta)
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/decodedbyprince)
@@ -68,8 +68,7 @@ const director = {
 
 <div align="center">
 
-<img width="49%" src="https://github-readme-stats.vercel.app/api?username=pr1ncegupta&show_icons=true&theme=transparent&hide_border=true&title_color=58a6ff&text_color=ffffff&icon_color=58a6ff&bg_color=00000000" />
-<img width="49%" src="https://github-readme-streak-stats.herokuapp.com?user=pr1ncegupta&theme=transparent&hide_border=true&ring=58a6ff&fire=ff6b6b&currStreakLabel=ffffff&background=00000000&stroke=00000000&dates=888888" />
+<img src="https://github-readme-stats.vercel.app/api?username=pr1ncegupta&show_icons=true&theme=transparent&hide_border=true&title_color=58a6ff&text_color=ffffff&icon_color=58a6ff&bg_color=00000000&hide_rank=true" width="400"/>
 
 </div>
 
