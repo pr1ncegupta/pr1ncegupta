@@ -1,72 +1,98 @@
-<div align="center">
-
-# Hey, I'm Prince 👋
-
-**I turn ideas into products, data into stories, and code into cinema.**
-
-`Bengaluru` · `Filmmaker` · `Builder`
-
----
-
-[![LinkedIn](https://img.shields.io/badge/-pr1ncegupta-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/pr1ncegupta)
-[![Twitter](https://img.shields.io/badge/-pr1ncegupta-1DA1F2?style=flat&logo=twitter&logoColor=white)](https://twitter.com/pr1ncegupta)
-[![Instagram](https://img.shields.io/badge/-decodedbyprince-E4405F?style=flat&logo=instagram&logoColor=white)](https://instagram.com/decodedbyprince)
-
-</div>
-
----
-
-### 🎬 What I Actually Do
-
-I don't just write code—I craft experiences. My work spans:
-
-- **🤖 AI Products** — Building voice-first interfaces and intelligent agents
-- **🎥 Visual Storytelling** — Directing short films & creating tech content  
-- **⚡ Rapid Prototyping** — Taking ideas from napkin sketch to deployed MVP in days
-
-> *"Most people use AI. I build with it."*
-
----
-
-### 🔧 Currently Building
-
-| What | Why |
-|:-----|:----|
-| 🧠 **Voice AI Companion** | Because therapy shouldn't be expensive or inaccessible |
-| 🌳 **Deforestation Detector** | ML models that watch over forests when we can't |
-| 📱 **Habit Engine** | Psychology-backed app that actually changes behavior |
-
----
-
-### 🛠 Tech I Ship With
-
 ```
-Frontend     →  React, Next.js, TypeScript, Swift
-Backend      →  Python, FastAPI, Node.js, Go
-AI/ML        →  TensorFlow, PyTorch, LangChain, Google ADK
-Creative     →  Figma, DaVinci Resolve, After Effects
+                    ╔══════════════════════════════════════════╗
+                    ║                                          ║
+                    ║           P R I N C E   G U P T A        ║
+                    ║                                          ║
+                    ║       "WHERE CODE MEETS CINEMA"          ║
+                    ║                                          ║
+                    ╚══════════════════════════════════════════╝
 ```
 
 ---
 
-### 📊 The Numbers
+```
+FADE IN:
 
-<div align="center">
+INT. A DIMLY LIT ROOM - NIGHT
 
-<img src="https://github-readme-stats.vercel.app/api?username=pr1ncegupta&show_icons=true&theme=transparent&hide_border=true&title_color=ffffff&text_color=9f9f9f&icon_color=58a6ff&hide=contribs&hide_rank=true" height="140"/>
+Multiple monitors glow in the darkness. Lines of code 
+reflect off a pair of glasses. A FILMMAKER'S camera sits 
+next to a MECHANICAL KEYBOARD.
 
-<img src="https://github-readme-streak-stats.herokuapp.com?user=pr1ncegupta&theme=transparent&hide_border=true&date_format=j%20M%5B%20Y%5D&ring=58a6ff&fire=ff6b6b&currStreakLabel=ffffff&sideLabels=9f9f9f&currStreakNum=ffffff&sideNums=9f9f9f&dates=9f9f9f" height="140"/>
+This is where products are born.
 
-</div>
+                              PRINCE (V.O.)
+                    Some people write code.
+                    Some people tell stories.
+                    I do both. At the same time.
+
+```
 
 ---
 
-<div align="center">
+### ▸ NOW PLAYING
 
-**Let's build something that matters.**
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  🎬  VOICE AI COMPANION                              [IN PROD]  │
+│      An AI that listens, understands, and responds with         │
+│      empathy. Because mental health shouldn't have a paywall.   │
+├─────────────────────────────────────────────────────────────────┤
+│  🌍  DEFORESTATION ML                               [RESEARCH]  │
+│      Teaching machines to watch over forests                    │
+│      when humans forget to.                                     │
+├─────────────────────────────────────────────────────────────────┤
+│  🧠  HABIT ENGINE                                    [SHIPPED]  │
+│      Psychology-backed. Behavior-first.                         │
+│      Actually works.                                            │
+└─────────────────────────────────────────────────────────────────┘
+```
 
-*Open to collabs on AI, film, or anything that pushes boundaries.*
+---
 
-<img src="https://komarev.com/ghpvc/?username=pr1ncegupta&style=flat&color=58a6ff&label=visitors"/>
+### ▸ THE TOOLKIT
 
-</div>
+```
+╭──────────────────────────────────────────────────────────────╮
+│                                                              │
+│   LANGUAGES        Python · TypeScript · Swift · Go         │
+│                                                              │
+│   FRONTEND         React · Next.js · Tailwind               │
+│                                                              │
+│   BACKEND          FastAPI · Node · PostgreSQL              │
+│                                                              │
+│   AI/ML            TensorFlow · LangChain · Google ADK      │
+│                                                              │
+│   CREATIVE         DaVinci Resolve · After Effects · Figma  │
+│                                                              │
+╰──────────────────────────────────────────────────────────────╯
+```
+
+---
+
+### ▸ THE STATS
+
+<p align="center">
+<img src="https://github-readme-streak-stats.herokuapp.com?user=pr1ncegupta&theme=transparent&hide_border=true&ring=58a6ff&fire=ff6b6b&currStreakLabel=ffffff&dates=555555&currStreakNum=ffffff&sideNums=888888&sideLabels=888888" width="420"/>
+</p>
+
+---
+
+```
+                              PRINCE (V.O.)
+                    The best products feel like magic.
+                    The best stories feel like truth.
+                    I'm chasing both.
+
+                                                    FADE TO BLACK.
+```
+
+---
+
+<p align="center">
+
+**[LinkedIn](https://linkedin.com/in/pr1ncegupta)** · **[Twitter](https://twitter.com/pr1ncegupta)** · **[Instagram](https://instagram.com/decodedbyprince)**
+
+*"Let's make something the world hasn't seen yet."*
+
+</p>
