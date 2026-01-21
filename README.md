@@ -1,124 +1,144 @@
 <div align="center">
+  
+<!-- Animated Header -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Prince%20Gupta&fontSize=42&fontColor=fff&animation=fadeIn&fontAlignY=32&desc=Tech%20%26%20Visual%20Storyteller&descAlignY=52&descSize=18" width="100%"/>
 
-# Prince Gupta
+<!-- Typing Animation -->
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=true&repeat=false&random=false&width=600&height=80&lines=Building+at+the+intersection+of;AI+%E2%80%A2+Product+Design+%E2%80%A2+Storytelling" alt="Typing SVG" /></a>
 
-### Tech & Visual Storyteller
+<!-- Social Badges -->
+<p>
+<a href="https://linkedin.com/in/pr1ncegupta"><img src="https://img.shields.io/badge/-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+<a href="https://twitter.com/pr1ncegupta"><img src="https://img.shields.io/badge/-Follow-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"/></a>
+<a href="https://instagram.com/decodedbyprince"><img src="https://img.shields.io/badge/-@decodedbyprince-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/></a>
+<a href="https://pr1ncegupta.github.io"><img src="https://img.shields.io/badge/-Portfolio-000?style=for-the-badge&logo=vercel&logoColor=white"/></a>
+</p>
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/pr1ncegupta)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/pr1ncegupta)
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/decodedbyprince)
-[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://pr1ncegupta.github.io)
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 </div>
 
----
-
-I build at the intersection of **AI**, **product design**, and **storytelling**. Currently based in Bengaluru, crafting digital experiences that feel alive.
-
-```python
-prince = {
-    "focus": ["AI/ML Products", "Voice Technology", "Visual Design"],
-    "current": "Building VoiceMind — AI voice companion for mental wellness",
-    "learning": ["Advanced ML", "System Design", "Film Production"],
-    "fun_fact": "I make tech videos and short films in my free time 🎬"
-}
+<!-- About Section with Terminal Style -->
+```javascript
+const prince = {
+    location: "Bengaluru, India 🇮🇳",
+    focus: ["AI/ML Products", "Full-Stack Development", "Visual Design"],
+    currently: "Exploring voice technology & agentic AI",
+    passions: ["Building products", "Making films", "Creating content"],
+    askMeAbout: ["React", "Python", "System Design", "Filmmaking"]
+};
 ```
 
----
+<br>
 
-## 🔥 Featured Projects
+<!-- Featured Projects Section -->
+## <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width="28"> Featured Projects
+
+<div align="center">
+
+| Project | Description | Tech |
+|:-------:|:------------|:----:|
+| **[Whitepaper Design](https://github.com/pr1ncegupta/whitepaper-design)** | Text-to-design tool for beautiful whitepaper visualizations | `TypeScript` `AI` |
+| **[PlanPoint](https://github.com/pr1ncegupta/PlanPoint)** | Habit app using Implementation Intentions psychology | `TypeScript` `React` |
+| **[Deforestation ML](https://github.com/pr1ncegupta/deforestation-ml)** | ML models detecting deforestation from satellite imagery | `Python` `TensorFlow` |
+| **[Workflow Visualizer](https://github.com/pr1ncegupta/workflow-visualizer)** | Visual workflow automation builder | `TypeScript` `Canvas` |
+| **[MacPowerTools](https://github.com/pr1ncegupta/MacPowerTools)** | Native macOS productivity utilities | `Swift` `AppKit` |
+
+</div>
+
+<br>
+
+<!-- Tech Stack with Icons -->
+## <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="28"> Tech Arsenal
+
+<div align="center">
 
 <table>
 <tr>
-<td width="50%">
-
-### 🧠 VoiceMind
-AI-powered voice companion for mental wellness with emotion detection, crisis intervention & personalized responses
-  
-`Python` `FastAPI` `Next.js` `Google ADK` `ML`
-
+<td align="center" width="110">
+<img src="https://skillicons.dev/icons?i=python" width="48" height="48" alt="Python" />
+<br><sub><b>Python</b></sub>
 </td>
-<td width="50%">
-
-### 📝 Whitepaper Design
-Text-to-design tool for creating beautiful whitepaper visualizations from plain text
-
-`TypeScript` `React` `AI Generation`
-
+<td align="center" width="110">
+<img src="https://skillicons.dev/icons?i=typescript" width="48" height="48" alt="TypeScript" />
+<br><sub><b>TypeScript</b></sub>
+</td>
+<td align="center" width="110">
+<img src="https://skillicons.dev/icons?i=react" width="48" height="48" alt="React" />
+<br><sub><b>React</b></sub>
+</td>
+<td align="center" width="110">
+<img src="https://skillicons.dev/icons?i=nextjs" width="48" height="48" alt="Next.js" />
+<br><sub><b>Next.js</b></sub>
+</td>
+<td align="center" width="110">
+<img src="https://skillicons.dev/icons?i=nodejs" width="48" height="48" alt="Node.js" />
+<br><sub><b>Node.js</b></sub>
+</td>
+<td align="center" width="110">
+<img src="https://skillicons.dev/icons?i=swift" width="48" height="48" alt="Swift" />
+<br><sub><b>Swift</b></sub>
 </td>
 </tr>
 <tr>
-<td width="50%">
-
-### 📱 PlanPoint
-Habit-building app using Implementation Intentions to turn goals into automatic triggers
-
-`TypeScript` `React Native` `Behavioral Science`
-
+<td align="center" width="110">
+<img src="https://skillicons.dev/icons?i=fastapi" width="48" height="48" alt="FastAPI" />
+<br><sub><b>FastAPI</b></sub>
 </td>
-<td width="50%">
-
-### 🌍 Deforestation ML
-Machine learning models for detecting and predicting deforestation patterns
-
-`Python` `TensorFlow` `Satellite Imagery`
-
+<td align="center" width="110">
+<img src="https://skillicons.dev/icons?i=tensorflow" width="48" height="48" alt="TensorFlow" />
+<br><sub><b>TensorFlow</b></sub>
+</td>
+<td align="center" width="110">
+<img src="https://skillicons.dev/icons?i=docker" width="48" height="48" alt="Docker" />
+<br><sub><b>Docker</b></sub>
+</td>
+<td align="center" width="110">
+<img src="https://skillicons.dev/icons?i=gcp" width="48" height="48" alt="GCP" />
+<br><sub><b>GCP</b></sub>
+</td>
+<td align="center" width="110">
+<img src="https://skillicons.dev/icons?i=figma" width="48" height="48" alt="Figma" />
+<br><sub><b>Figma</b></sub>
+</td>
+<td align="center" width="110">
+<img src="https://skillicons.dev/icons?i=tailwind" width="48" height="48" alt="Tailwind" />
+<br><sub><b>Tailwind</b></sub>
 </td>
 </tr>
 </table>
 
----
+</div>
 
-## 🛠️ Tech Stack
+<br>
+
+<!-- GitHub Stats Section -->
+## <img src="https://media.giphy.com/media/cj87CxfRtrUifF3Ber/giphy.gif" width="28"> GitHub Analytics
 
 <div align="center">
+  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=pr1ncegupta&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=58A6FF&text_color=C9D1D9&rank_icon=github" />
+  <img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=pr1ncegupta&theme=tokyonight&hide_border=true&background=0D1117&stroke=58A6FF&ring=58A6FF&fire=FF6B6B&currStreakLabel=58A6FF" />
+</div>
 
-**Languages**
+<br>
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Swift](https://img.shields.io/badge/Swift-FA7343?style=flat-square&logo=swift&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=pr1ncegupta&bg_color=0d1117&color=58a6ff&line=58a6ff&point=ff6b6b&area=true&hide_border=true" width="95%"/>
+</div>
 
-**Frontend**
+<br>
 
-![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
-![Tailwind](https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+<!-- Footer -->
+<div align="center">
 
-**Backend & AI**
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
-![Google Cloud](https://img.shields.io/badge/GCP-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
+### 💡 *"Building products that feel alive"*
 
-**Tools**
+<br>
 
-![Figma](https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+<img src="https://komarev.com/ghpvc/?username=pr1ncegupta&style=for-the-badge&color=58a6ff&label=Profile+Views" />
 
 </div>
 
----
-
-## 📊 GitHub Stats
-
-<div align="center">
-  
-<img src="https://github-readme-stats.vercel.app/api?username=pr1ncegupta&show_icons=true&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9" height="165" />
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=pr1ncegupta&theme=github-dark-blue&hide_border=true&background=0d1117&stroke=30363d&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff" height="165" />
-
-</div>
-
----
-
-<div align="center">
-
-### Let's build something incredible together 🚀
-
-*Open to collaborations on AI, filmmaking, or interesting product ideas*
-
-</div>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer" width="100%"/>
