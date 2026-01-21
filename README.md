@@ -1,98 +1,117 @@
-```
-                    ╔══════════════════════════════════════════╗
-                    ║                                          ║
-                    ║           P R I N C E   G U P T A        ║
-                    ║                                          ║
-                    ║       "WHERE CODE MEETS CINEMA"          ║
-                    ║                                          ║
-                    ╚══════════════════════════════════════════╝
-```
+<div align="center">
+
+# 🎬 PRINCE GUPTA
+### Director's Storyboard
+
+</div>
 
 ---
 
-```
-FADE IN:
+<table>
+<tr>
+<td width="120" align="center">
+<br>
+<b>PANEL 01</b>
+<br><br>
+<code>WIDE</code>
+<br><br>
+</td>
+<td>
 
-INT. A DIMLY LIT ROOM - NIGHT
+**INT. WORKSPACE — NIGHT**
 
-Multiple monitors glow in the darkness. Lines of code 
-reflect off a pair of glasses. A FILMMAKER'S camera sits 
-next to a MECHANICAL KEYBOARD.
+*Camera pulls back to reveal: three monitors, mechanical keyboard, cinema camera on tripod. Coffee steam rises.*
 
-This is where products are born.
+> I build things that blur the line between technology and art.
 
-                              PRINCE (V.O.)
-                    Some people write code.
-                    Some people tell stories.
-                    I do both. At the same time.
-
-```
-
----
-
-### ▸ NOW PLAYING
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│  🎬  VOICE AI COMPANION                              [IN PROD]  │
-│      An AI that listens, understands, and responds with         │
-│      empathy. Because mental health shouldn't have a paywall.   │
-├─────────────────────────────────────────────────────────────────┤
-│  🌍  DEFORESTATION ML                               [RESEARCH]  │
-│      Teaching machines to watch over forests                    │
-│      when humans forget to.                                     │
-├─────────────────────────────────────────────────────────────────┤
-│  🧠  HABIT ENGINE                                    [SHIPPED]  │
-│      Psychology-backed. Behavior-first.                         │
-│      Actually works.                                            │
-└─────────────────────────────────────────────────────────────────┘
-```
+</td>
+</tr>
+</table>
 
 ---
 
-### ▸ THE TOOLKIT
+<table>
+<tr>
+<td width="120" align="center">
+<br>
+<b>PANEL 02</b>
+<br><br>
+<code>CLOSE-UP</code>
+<br><br>
+</td>
+<td>
 
-```
-╭──────────────────────────────────────────────────────────────╮
-│                                                              │
-│   LANGUAGES        Python · TypeScript · Swift · Go         │
-│                                                              │
-│   FRONTEND         React · Next.js · Tailwind               │
-│                                                              │
-│   BACKEND          FastAPI · Node · PostgreSQL              │
-│                                                              │
-│   AI/ML            TensorFlow · LangChain · Google ADK      │
-│                                                              │
-│   CREATIVE         DaVinci Resolve · After Effects · Figma  │
-│                                                              │
-╰──────────────────────────────────────────────────────────────╯
-```
+**THE WORK**
 
----
+| Project | Shot Description | Status |
+|:--------|:-----------------|:------:|
+| 🎙️ **Voice AI** | An AI that feels. Listens. Responds with empathy. | `FILMING` |
+| 🌳 **Forest Watch** | ML models trained on satellite data. Guardian algorithms. | `IN DEV` |
+| 🧠 **Habit OS** | Behavioral psychology → code. Change that sticks. | `WRAPPED` |
 
-### ▸ THE STATS
-
-<p align="center">
-<img src="https://github-readme-streak-stats.herokuapp.com?user=pr1ncegupta&theme=transparent&hide_border=true&ring=58a6ff&fire=ff6b6b&currStreakLabel=ffffff&dates=555555&currStreakNum=ffffff&sideNums=888888&sideLabels=888888" width="420"/>
-</p>
+</td>
+</tr>
+</table>
 
 ---
 
-```
-                              PRINCE (V.O.)
-                    The best products feel like magic.
-                    The best stories feel like truth.
-                    I'm chasing both.
+<table>
+<tr>
+<td width="120" align="center">
+<br>
+<b>PANEL 03</b>
+<br><br>
+<code>INSERT</code>
+<br><br>
+</td>
+<td>
 
-                                                    FADE TO BLACK.
+**THE GEAR**
+
 ```
+CAMERA A ━━━  Python • TypeScript • Swift • Go
+CAMERA B ━━━  React • Next.js • FastAPI • Node
+LIGHTING ━━━  TensorFlow • LangChain • Google ADK  
+POST     ━━━  DaVinci Resolve • After Effects • Figma
+```
+
+</td>
+</tr>
+</table>
 
 ---
 
-<p align="center">
+<table>
+<tr>
+<td width="120" align="center">
+<br>
+<b>PANEL 04</b>
+<br><br>
+<code>FADE OUT</code>
+<br><br>
+</td>
+<td>
+
+**EXT. BENGALURU — CONTINUOUS**
+
+*PRINCE walks through frame. Stops. Turns to camera.*
+
+> Some ship features. I ship experiences.<br>
+> Some write docs. I write stories.<br>
+> Let's make something worth remembering.
+
+**— CUT TO BLACK —**
+
+</td>
+</tr>
+</table>
+
+---
+
+<div align="center">
 
 **[LinkedIn](https://linkedin.com/in/pr1ncegupta)** · **[Twitter](https://twitter.com/pr1ncegupta)** · **[Instagram](https://instagram.com/decodedbyprince)**
 
-*"Let's make something the world hasn't seen yet."*
+<sub>📍 Bengaluru, India · 🎬 Always shooting</sub>
 
-</p>
+</div>
