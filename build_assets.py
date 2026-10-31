@@ -1,17 +1,25 @@
 """Builds the README images for github.com/pr1ncegupta.
 Text is outlined to paths, so the images render the same everywhere on GitHub.
-Edit the copy below, then run: python3 build_assets.py
+Edit the copy below, then run: python3 build_assets.py [header|numbers|quote|contributions ...]
+With no arguments it builds everything. The contributions chart reads the GitHub
+contribution calendar, so it needs GITHUB_TOKEN (or a logged-in gh CLI).
 Needs: pip install fonttools brotli uharfbuzz
 """
-import io, sys
+import datetime as dt, io, json, os, subprocess, sys, urllib.request
 import uharfbuzz as hb
 from fontTools.ttLib import TTFont
 from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.transformPen import TransformPen
 
-FONT = sys.argv[1] if len(sys.argv) > 1 else "GoogleSansFlex-Variable.woff2"
+HERE = os.path.dirname(os.path.abspath(__file__))
+FONTS = {
+    "sans": "fonts/GoogleSansFlex-Variable.woff2",       # anything glanced at
+    "serif": "fonts/Literata-Variable.woff2",            # anything read
+    "italic": "fonts/Literata-Italic-Variable.woff2",    # the one pull quote
+}
 
 # ---------- copy ----------
+USER = "pr1ncegupta"
 NAME = "Prince Gupta"
 LINE_1 = "I lead social and partnerships at Lyzr AI,"
 LINE_2 = "and I build the systems that run it."   # the one chartreuse highlight
@@ -22,43 +30,57 @@ STATS = [
     ("~100K", ["followers for", "decodedbyprince", "across platforms"]),
     ("1.5 yrs", ["to build it, after", "a few channels", "that did not work"]),
 ]
+QUOTE = [  # (text, highlighted) runs per line; the highlight is the quote's one chartreuse element
+    [("When the content work starts repeating itself,", False)],
+    [("I write ", False), ("the tool that takes the repetition away.", True)],
+]
 
 # ---------- brand v3 role tokens ----------
 MODES = {
-    "light": dict(canvas="#ffffff", surface="#f8fbf9", rule="#e4e7e5", ink="#1f2120",
-                  muted="#545655", subtle="#707271", accent="#c4ff1a", on_accent="#1f2120",
+    "light": dict(canvas="#ffffff", surface="#f8fbf9", rule="#e4e7e5", rule_strong="#8a8d8b", ink="#1f2120",
+                  muted="#545655", subtle="#707271", accent="#c4ff1a", on_accent="#1f2120", data1="#0a70ff",
+                  heat=["#f1f4f3", "#d0d3d2", "#acafad", "#707271", "#1f2120"],   # grey ramp 100 to 900
                   border=True, dw=0),
-    "dark":  dict(canvas="#1f2120", surface="#313332", rule="#414342", ink="#ffffff",
-                  muted="#e4e7e5", subtle="#acafad", accent="#c4ff1a", on_accent="#1f2120",
+    "dark":  dict(canvas="#1f2120", surface="#313332", rule="#414342", rule_strong="#8a8d8b", ink="#ffffff",
+                  muted="#e4e7e5", subtle="#acafad", accent="#c4ff1a", on_accent="#1f2120", data1="#c4ff1a",
+                  heat=["#313332", "#545655", "#8a8d8b", "#d0d3d2", "#ffffff"],   # grey ramp 800 to 0
                   border=False, dw=-40),   # take 40 off display weights on Carbon
 }
 
-tt = TTFont(FONT); buf = io.BytesIO(); tt.flavor = None; tt.save(buf)
-blob = hb.Blob(buf.getvalue()); face = hb.Face(blob); UPEM = face.upem
+FACES = {}
+def face(family):
+    if family not in FACES:
+        tt = TTFont(os.path.join(HERE, FONTS[family])); buf = io.BytesIO(); tt.flavor = None; tt.save(buf)
+        axes = {a.axisTag: (a.minValue, a.maxValue) for a in tt["fvar"].axes}
+        FACES[family] = (hb.Face(hb.Blob(buf.getvalue())), axes)
+    return FACES[family]
 
-def font_at(weight, size):
-    f = hb.Font(face)
-    f.set_variations({"wght": weight, "opsz": max(6, min(144, size))})
-    return f
+def font_at(family, weight, size):
+    fc, axes = face(family)
+    f = hb.Font(fc)
+    lo, hi = axes["opsz"]
+    f.set_variations({"wght": weight, "opsz": max(lo, min(hi, size))})
+    return f, fc.upem
 
-def shape(text, size, weight, tracking=0.0):
-    f = font_at(weight, size)
+def shape(text, size, weight, tracking=0.0, family="sans"):
+    f, upem = font_at(family, weight, size)
     b = hb.Buffer(); b.add_str(text); b.guess_segment_properties()
     hb.shape(f, b, {"kern": True, "liga": True})
-    s = size / UPEM; track = tracking * size
+    s = size / upem; track = tracking * size
     glyphs, x = [], 0.0
     for info, pos in zip(b.glyph_infos, b.glyph_positions):
         glyphs.append((info.codepoint, x + pos.x_offset * s))
         x += pos.x_advance * s + track
-    return f, glyphs, x - track
+    return f, glyphs, x - track, s
 
-def width(text, size, weight, tracking=0.0):
-    return shape(text, size, weight, tracking)[2]
+def width(text, size, weight, tracking=0.0, family="sans"):
+    return shape(text, size, weight, tracking, family)[2]
 
-def path(text, size, weight, x0, base, fill, tracking=0.0, anchor="start"):
-    f, glyphs, w = shape(text, size, weight, tracking)
+def path(text, size, weight, x0, base, fill, tracking=0.0, anchor="start", family="sans"):
+    f, glyphs, w, s = shape(text, size, weight, tracking, family)
     if anchor == "end": x0 -= w
-    s = size / UPEM; ds = []
+    if anchor == "middle": x0 -= w / 2
+    ds = []
     for gid, gx in glyphs:
         pen = SVGPathPen(None, ntos=lambda v: f"{v:.1f}".rstrip("0").rstrip("."))
         f.draw_glyph_with_pen(gid, TransformPen(pen, (s, 0, 0, -s, x0 + gx, base)))
@@ -69,11 +91,21 @@ def svg(w, h, body, title):
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" '
             f'role="img" aria-label="{title}"><title>{title}</title>{body}</svg>\n')
 
-def check(label, text, size, weight, room, tracking=0.0):
-    used = width(text, size, weight, tracking)
+def check(label, text, size, weight, room, tracking=0.0, family="sans"):
+    used = width(text, size, weight, tracking, family)
     ok = used <= room * 0.92
     print(f"  {'ok  ' if ok else 'FAIL'} {label}: {used:.0f} of {room:.0f}px (8% spare = {room*0.92:.0f})")
     if not ok: sys.exit(1)
+
+def frame(c, W, H):
+    b = [f'<rect width="{W}" height="{H}" fill="{c["canvas"]}"/>']
+    if c["border"]:
+        b.append(f'<rect x="1" y="1" width="{W-2}" height="{H-2}" fill="none" stroke="{c["rule"]}" stroke-width="2"/>')
+    return b
+
+def write(name, m, w, h, body, alt):
+    with open(os.path.join(HERE, f"assets/{name}-{m}.svg"), "w") as fh:
+        fh.write(svg(w, h, "".join(body), alt))
 
 def header(m):
     c = MODES[m]; W, H, P = 1200, 500, 72
@@ -83,9 +115,7 @@ def header(m):
     check("line 1", LINE_1, 44, wl, W - 2*P, -0.01)
     check("line 2 + box padding", LINE_2, 44, wl, W - 2*P - 28, -0.01)
     check("footer", HANDLE + PLACE, 28, 540, W - 2*P - 120)
-    b = [f'<rect width="{W}" height="{H}" fill="{c["canvas"]}"/>']
-    if c["border"]:
-        b.append(f'<rect x="1" y="1" width="{W-2}" height="{H-2}" fill="none" stroke="{c["rule"]}" stroke-width="2"/>')
+    b = frame(c, W, H)
     b.append(path(NAME, 104, wn, P, 184, c["ink"], -0.025))
     b.append(path(LINE_1, 44, wl, P, 264, c["muted"], -0.01))
     bw = width(LINE_2, 44, wl, -0.01) + 28
@@ -93,8 +123,7 @@ def header(m):
     b.append(path(LINE_2, 44, wl, P + 14, 322, c["on_accent"], -0.01))
     b.append(path(HANDLE, 28, wh, P, H - 64, c["ink"]))
     b.append(path(PLACE, 28, 400, W - P, H - 64, c["subtle"], anchor="end"))
-    alt = f"{NAME}. {LINE_1} {LINE_2} {PLACE}."
-    open(f"assets/header-{m}.svg", "w").write(svg(W, H, "".join(b), alt))
+    write("header", m, W, H, b, f"{NAME}. {LINE_1} {LINE_2} {PLACE}.")
 
 def numbers(m):
     c = MODES[m]; W, H, G, PAD = 1200, 292, 24, 40
@@ -112,9 +141,118 @@ def numbers(m):
         b.append(path(num, 96, wn, x + PAD, 40 + 72, c["ink"], -0.03))
         for j, ln in enumerate(lines):
             b.append(path(ln, 28, 400, x + PAD, 164 + j*38, c["muted"]))
-    alt = " ".join(f"{n} {' '.join(l)}." for n, l in STATS)
-    open(f"assets/numbers-{m}.svg", "w").write(svg(W, H, "".join(b), alt))
+    write("numbers", m, W, H, b, " ".join(f"{n} {' '.join(l)}." for n, l in STATS))
 
-for m in MODES:
-    header(m); numbers(m)
-print("done")
+def quote(m):
+    """The one pull quote: Literata Italic, with the highlight box on the payoff."""
+    c = MODES[m]; W, P, SIZE, LH, PADX = 1200, 72, 46, 72, 14
+    print(f"quote-{m}")
+    H = 2 * 64 + LH * len(QUOTE)
+    b = frame(c, W, H)
+    for i, runs in enumerate(QUOTE):
+        base = 64 + 52 + i * LH
+        check(f"quote line {i+1}", "".join(t for t, _ in runs), SIZE, 400, W - 2*P - 2*PADX, -0.01, "italic")
+        x = P
+        for text, hi in runs:
+            w = width(text, SIZE, 400, -0.01, "italic")
+            if hi:   # leave a few px between the previous word and the box
+                x += PADX - 6
+                b.append(f'<rect x="{x - PADX:.0f}" y="{base-44}" width="{w + 2*PADX:.0f}" height="62" fill="{c["accent"]}"/>')
+                b.append(path(text, SIZE, 400, x, base, c["on_accent"], -0.01, family="italic"))
+                x += w
+            else:
+                b.append(path(text, SIZE, 400, x, base, c["ink"], -0.01, family="italic"))
+                x += w
+    write("quote", m, W, H, b, " ".join(t for runs in QUOTE for t, _ in runs))
+
+# ---------- contributions ----------
+LEVELS = {"NONE": 0, "FIRST_QUARTILE": 1, "SECOND_QUARTILE": 2, "THIRD_QUARTILE": 3, "FOURTH_QUARTILE": 4}
+
+def calendar():
+    q = ('{user(login:"%s"){contributionsCollection{restrictedContributionsCount '
+         'contributionCalendar{totalContributions weeks{contributionDays{date contributionCount contributionLevel}}}}}}' % USER)
+    token = os.environ.get("GITHUB_TOKEN") or subprocess.run(["gh", "auth", "token"], capture_output=True, text=True).stdout.strip()
+    req = urllib.request.Request("https://api.github.com/graphql", json.dumps({"query": q}).encode(),
+                                 {"Authorization": f"bearer {token}", "Content-Type": "application/json"})
+    data = json.load(urllib.request.urlopen(req))["data"]["user"]["contributionsCollection"]
+    cal = data["contributionCalendar"]
+    weeks = [[(dt.date.fromisoformat(d["date"]), d["contributionCount"], LEVELS[d["contributionLevel"]])
+              for d in w["contributionDays"]] for w in cal["weeks"]]
+    return weeks, cal["totalContributions"], data["restrictedContributionsCount"]
+
+def fmt(d):
+    return f"{d.day} {d:%b %Y}"
+
+def contributions(m, cal):
+    c = MODES[m]; weeks, total, private = cal
+    W, P = 1200, 72; wn = 560 + c["dw"]
+    days = [d for w in weeks for d in w]
+    active = sum(1 for d in days if d[1])
+    best_i = max(range(len(weeks)), key=lambda i: sum(d[1] for d in weeks[i]))
+    best_n = sum(d[1] for d in weeks[best_i])
+    best_day = max(days, key=lambda d: d[1])
+    streak = run = 0
+    for d in days:
+        run = run + 1 if d[1] else 0; streak = max(streak, run)
+    pct = round(100 * private / total) if total else 0
+    print(f"contributions-{m}")
+
+    head = f"{total:,} contributions in the last year"
+    sub = f"{pct}% of it happened in private repos, so it shows as a count."
+    check("headline", head, 56, wn, W - 2*P, -0.02)
+    check("subline", sub, 28, 400, W - 2*P, 0, "serif")
+    b = frame(c, W, 0)  # height patched below
+    b.append(path(head, 56, wn, P, 128, c["ink"], -0.02))
+    b.append(path(sub, 28, 400, P, 180, c["muted"], family="serif"))
+
+    # grid: grey ramp by GitHub's own quartiles, the busiest week in data-1
+    pitch = (W - 2*P) // len(weeks); cell = pitch - 4; gx, gy = P, 262
+    last_label = -999
+    for i, w in enumerate(weeks):
+        x = gx + i * pitch
+        first = w[0][0]
+        if first.day <= 7 and x - last_label >= 72:   # month label on the first week of each month
+            b.append(path(f"{first:%b}", 28, 400, x, gy - 16, c["subtle"])); last_label = x
+        for d in w:
+            fill = c["data1"] if i == best_i and d[1] else c["heat"][d[2]]
+            b.append(f'<rect x="{x}" y="{gy + d[0].isoweekday() % 7 * pitch}" width="{cell}" height="{cell}" fill="{fill}"/>')
+    gb = gy + 7 * pitch - 4
+
+    # callout under the busiest week
+    bx = gx + best_i * pitch + cell / 2
+    label = f"Busiest week: {best_n} contributions from {fmt(weeks[best_i][0][0])}"
+    lw = width(label, 28, 400)
+    anchor = "end" if bx + lw > W - P else "start"
+    b.append(f'<rect x="{bx-1:.0f}" y="{gb + 8}" width="2" height="36" fill="{c["rule_strong"]}"/>')
+    b.append(path(label, 28, 400, bx + (10 if anchor == "start" else -10), gb + 42, c["ink"], anchor=anchor))
+
+    # stat row
+    sy = gb + 76; cw = (W - 2*P) / 3
+    stats = [(f"{active}", "active days"), (f"{streak}", "day longest streak"),
+             (f"{best_day[1]}", f"top day, {best_day[0].day} {best_day[0]:%b %Y}")]
+    b.append(f'<rect x="{P}" y="{sy}" width="{W - 2*P}" height="2" fill="{c["rule"]}"/>')
+    for i, (num, lab) in enumerate(stats):
+        x = P + i * cw
+        check(f"stat {num}", num, 56, wn, cw - 24, -0.02)
+        check(f"  label '{lab}'", lab, 28, 400, cw - 24)
+        b.append(path(num, 56, wn, x, sy + 80, c["ink"], -0.02))
+        b.append(path(lab, 28, 400, x, sy + 120, c["muted"]))
+
+    src = f"Source: GitHub contribution calendar. Rebuilt daily, last on {fmt(dt.date.today())}."
+    check("source", src, 28, 400, W - 2*P)
+    H = sy + 250
+    b.append(path(src, 28, 400, P, H - 56, c["subtle"]))
+    b[0] = f'<rect width="{W}" height="{H}" fill="{c["canvas"]}"/>'
+    if c["border"]:
+        b[1] = f'<rect x="1" y="1" width="{W-2}" height="{H-2}" fill="none" stroke="{c["rule"]}" stroke-width="2"/>'
+    alt = (f"{head}. {sub} The busiest week started {fmt(weeks[best_i][0][0])} with {best_n} contributions. "
+           f"Longest streak: {streak} days.")
+    write("contributions", m, W, H, b, alt)
+
+if __name__ == "__main__":
+    jobs = sys.argv[1:] or ["header", "numbers", "quote", "contributions"]
+    cal = calendar() if "contributions" in jobs else None
+    for m in MODES:
+        for j in jobs:
+            contributions(m, cal) if j == "contributions" else globals()[j](m)
+    print("done")

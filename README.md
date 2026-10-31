@@ -1,65 +1,75 @@
-<!-- Header and stats images are built by build_assets.py. Edit the copy there, not in the SVGs. -->
+<!-- Every image here is an outlined SVG built by build_assets.py. Edit the copy there, not in the SVGs. -->
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
   <img src="assets/header-light.svg" width="100%" alt="Prince Gupta. I lead social and partnerships at Lyzr AI, and I build the systems that run it. Bengaluru, from Nepal.">
 </picture>
 
-<div align="center">
+<p align="center">
+  <a href="#work">Work</a> &nbsp;·&nbsp;
+  <a href="#lyzr">Lyzr</a> &nbsp;·&nbsp;
+  <a href="#decodedbyprince">decodedbyprince</a> &nbsp;·&nbsp;
+  <a href="#code">Code</a> &nbsp;·&nbsp;
+  <a href="#commits">Commits</a> &nbsp;·&nbsp;
+  <a href="#colophon">Colophon</a>
+</p>
+
+I am a creative strategist at [Lyzr AI](https://www.lyzr.ai), an enterprise agentic AI platform. I also studied computer science engineering at Jain University, and that shows up in how I do the marketing job:
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&duration=2800&pause=900&color=C4FF1A&center=true&vCenter=true&width=640&lines=Creative+strategist+at+Lyzr+AI;Documentary+storyteller+at+decodedbyprince;When+the+work+repeats%2C+I+write+the+tool;Bengaluru%2C+from+Nepal">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&duration=2800&pause=900&color=1F2120&center=true&vCenter=true&width=640&lines=Creative+strategist+at+Lyzr+AI;Documentary+storyteller+at+decodedbyprince;When+the+work+repeats%2C+I+write+the+tool;Bengaluru%2C+from+Nepal" alt="Creative strategist at Lyzr AI. Documentary storyteller at decodedbyprince. When the work repeats, I write the tool. Bengaluru, from Nepal.">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/quote-dark.svg">
+  <img src="assets/quote-light.svg" width="100%" alt="When the content work starts repeating itself, I write the tool that takes the repetition away.">
 </picture>
-
-<br>
-
-<a href="https://linkedin.com/in/pr1ncegupta"><img src="https://img.shields.io/badge/LinkedIn-1f2120?style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2M0ZmYxYSIgZD0iTTIwLjQ0NyAyMC40NTJoLTMuNTU0di01LjU2OWMwLTEuMzI4LS4wMjctMy4wMzctMS44NTItMy4wMzctMS44NTMgMC0yLjEzNiAxLjQ0NS0yLjEzNiAyLjkzOXY1LjY2N0g5LjM1MVY5aDMuNDE0djEuNTYxaC4wNDZjLjQ3Ny0uOSAxLjYzNy0xLjg1IDMuMzctMS44NSAzLjYwMSAwIDQuMjY3IDIuMzcgNC4yNjcgNS40NTV2Ni4yODZ6TTUuMzM3IDcuNDMzYy0xLjE0NCAwLTIuMDYzLS45MjYtMi4wNjMtMi4wNjUgMC0xLjEzOC45Mi0yLjA2MyAyLjA2My0yLjA2MyAxLjE0IDAgMi4wNjQuOTI1IDIuMDY0IDIuMDYzIDAgMS4xMzktLjkyNSAyLjA2NS0yLjA2NCAyLjA2NXptMS43ODIgMTMuMDE5SDMuNTU1VjloMy41NjR2MTEuNDUyek0yMi4yMjUgMEgxLjc3MUMuNzkyIDAgMCAuNzc0IDAgMS43Mjl2MjAuNTQyQzAgMjMuMjI3Ljc5MiAyNCAxLjc3MSAyNGgyMC40NTFDMjMuMiAyNCAyNCAyMy4yMjcgMjQgMjIuMjcxVjEuNzI5QzI0IC43NzQgMjMuMiAwIDIyLjIyMiAwaC4wMDN6Ii8+PC9zdmc+" alt="LinkedIn"></a>
-<a href="https://x.com/pr1ncegupta"><img src="https://img.shields.io/badge/X-1f2120?style=for-the-badge&logo=x&logoColor=c4ff1a" alt="X"></a>
-<a href="https://instagram.com/decodedbyprince"><img src="https://img.shields.io/badge/decodedbyprince-1f2120?style=for-the-badge&logo=instagram&logoColor=c4ff1a" alt="Instagram"></a>
-<a href="https://hiiprince.com"><img src="https://img.shields.io/badge/hiiprince.com-c4ff1a?style=for-the-badge&logo=vercel&logoColor=1f2120" alt="hiiprince.com"></a>
-<a href="https://www.lyzr.ai"><img src="https://img.shields.io/badge/@_Lyzr_AI-1f2120?style=for-the-badge" alt="Lyzr AI"></a>
-
-</div>
-
-I am a creative strategist at [Lyzr AI](https://www.lyzr.ai), an enterprise agentic AI platform. I studied computer science engineering at Jain University, so when the content work starts repeating itself, I write the tool that takes the repetition away.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/numbers-dark.svg">
   <img src="assets/numbers-light.svg" width="100%" alt="9M views on the Architect creator campaign at Lyzr. Close to 100K followers for decodedbyprince across platforms. 1.5 years to build it, after a few channels that did not work.">
 </picture>
 
-> [!TIP]
-> **The short version:** I am a marketer who writes code. The numbers above come from systems I built, not from posting harder. Below is how each one works.
+```yaml
+# about.yaml
+name: Prince Gupta
+role: Creative strategist, Lyzr AI
+based_in: Bengaluru
+from: Nepal
+day_job: [organic social, creator partnerships, GEO, leadership branding]
+side_project: decodedbyprince   # archaeology, mythology, sacred places
+rule: if a task repeats, it becomes a tool
+```
 
----
+<br>
 
-## 🚀 Featured work
+<a id="work"></a>
 
-### 1. The content engine &nbsp; ![Claude](https://img.shields.io/badge/Claude_skills-1f2120?logo=claude&logoColor=c4ff1a)
+## 01 &nbsp; Featured work
 
-**Problem.** A documentary channel needs a hook, a script, an edit plan and an upload pack for every episode, and doing it by hand capped how often I could ship.
-**What I built.** A chain of Claude skills, one per stage, where each skill's output is the next one's input. Hooks get scored on a fixed rubric and only the ones above 80 move on.
+Five things I built. Each one is written up the same way: the brief, what I built, and what came of it.
+
+### The content engine
+
+<sub>Claude skills &nbsp;·&nbsp; 8 stages &nbsp;·&nbsp; runs on every episode</sub>
+
+**Brief.** A documentary channel needs a hook, a script, an edit plan and an upload pack for every episode. Doing it all by hand capped how often I could ship.<br>
+**Built.** A chain of Claude skills, one per stage, where each skill's output is the next one's input. Hooks get scored on a fixed rubric, and only the ones above 80 move on.<br>
 **Result.** [decodedbyprince](https://instagram.com/decodedbyprince) at close to 100K followers across platforms in 1.5 years.
 
 ```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#e3eeff", "primaryTextColor": "#1f2120", "primaryBorderColor": "#0a70ff", "lineColor": "#0a70ff", "edgeLabelBackground": "#e3eeff", "fontFamily": "Google Sans Flex, Helvetica Neue, Arial, sans-serif"}}}%%
 flowchart LR
-    A([💡 hook-writer]) --> B{{🎯 hook-scorer<br/>80+ only}}
-    B -- pass --> C([✍️ script-writer])
+    A[hook-writer] --> B{hook-scorer}
+    B -- 80 and up --> C[script-writer]
     B -. below 80 .-> A
-    C --> D([🧹 anti-ai-writing])
-    D --> E([🎞️ broll-sourcer])
-    E --> F([📦 youtube-packaging])
-    F --> G((🚀 Publish))
+    C --> D[anti-ai-writing]
+    D --> E[broll-sourcer]
+    E --> F[youtube-packaging]
+    F --> G[Publish]
 
-    classDef step fill:#1f2120,stroke:#c4ff1a,stroke-width:2px,color:#ffffff
     classDef ship fill:#c4ff1a,stroke:#1f2120,stroke-width:2px,color:#1f2120
-    class A,B,C,D,E,F step
     class G ship
 ```
 
 <details>
-<summary><b>🤖 Every skill in the engine</b></summary>
+<summary><b>Every skill in the engine</b></summary>
 <br>
 
 | Stage | Skill | Job |
@@ -75,132 +85,126 @@ flowchart LR
 
 </details>
 
-### 2. Generative engine optimisation at Lyzr &nbsp; ![GEO](https://img.shields.io/badge/GEO-1f2120)
+### Generative engine optimisation at Lyzr
 
-Search is moving into chat answers, so I track how LLMs cite Lyzr in their answers and feed what I find back into the content plan.[^geo]
+<sub>GEO &nbsp;·&nbsp; LLM citations &nbsp;·&nbsp; ongoing</sub>
 
-### 3. The Architect creator campaign &nbsp; ![9M views](https://img.shields.io/badge/9M-views-c4ff1a?labelColor=1f2120)
+**Brief.** People now ask a chatbot before they search, and a brand the model never cites is missing from that answer.<br>
+**Built.** Tracking of how LLMs cite Lyzr in their answers, fed back into what we publish next.[^geo]
 
-A creator and influencer campaign I ran for Lyzr that reached **9M views**.
+### The Architect creator campaign
 
-### 4. TL;DR, a product demo on Lyzr agents &nbsp; ![TypeScript](https://img.shields.io/badge/TypeScript-1f2120?logo=typescript&logoColor=c4ff1a)
+<sub>Creator partnerships &nbsp;·&nbsp; Lyzr</sub>
 
-[TL;DR](https://github.com/pr1ncegupta/TLDR-P) turns any text into a summary and action points using four AI agents running on Lyzr. It is a marketing asset that is also working software: [try it live](https://tldr-p.vercel.app).
+**Built.** A creator and influencer campaign for Lyzr.<br>
+**Result.** **9M views.**
 
-### 5. Second brain &nbsp; ![Notion](https://img.shields.io/badge/Notion-1f2120?logo=notion&logoColor=c4ff1a)
+### TL;DR, a product demo on Lyzr agents
 
-One Notion task table across work and life, with Slack digests twice a day, so nothing from a campaign falls through between meetings.
+<sub>TypeScript &nbsp;·&nbsp; 4 agents &nbsp;·&nbsp; <a href="https://tldr-p.vercel.app">live</a></sub>
 
----
+**Built.** [TL;DR](https://github.com/pr1ncegupta/TLDR-P), which turns any text into a summary and action points using four AI agents on Lyzr. It is a marketing asset that is also working software.
 
-## 🧭 At Lyzr
+### Second brain
 
-```mermaid
-timeline
-    title Lyzr, so far
-    April 2025 : Joined as an intern
-    January 2026 : Full time as creative strategist
-                 : Leading social and partnerships
-```
+<sub>Notion &nbsp;·&nbsp; Slack</sub>
 
-- [x] Organic social across **LinkedIn, X, Instagram and Reddit**
-- [x] Personal branding and podcast outreach for Lyzr's leadership
-- [x] Creator and influencer partnerships, including the **Architect** campaign
-- [x] Generative engine optimisation
-- [x] Hiring and running a team of interns
+**Built.** One Notion task table across work and life, with Slack digests twice a day, so nothing from a campaign falls through between meetings.
 
----
-
-## 🏛️ decodedbyprince
-
-A documentary channel on archaeology, mythology and sacred places, made with the content engine above.
-
-<details>
-<summary><b>📍 Recent stories</b> (click to open)</summary>
 <br>
 
-| | Story | Where |
-| :-: | :-- | :-- |
-| 🗿 | **Göbekli Tepe** | Şanlıurfa, Türkiye |
-| 💀 | **Roopkund**, the skeleton lake | Uttarakhand, India |
-| 🛕 | **Kailasa Temple**, cut from one rock | Ellora, India |
-| 🕳️ | **Derinkuyu**, the underground city | Cappadocia, Türkiye |
-| 🦁 | **Sigiriya**, the lion rock | Central Province, Sri Lanka |
+<a id="lyzr"></a>
+
+## 02 &nbsp; At Lyzr
+
+```diff
+@@ lyzr/changelog.md @@
++ Jan 2026   Full time as creative strategist
++            Leading social and partnerships, hiring and running the intern team
++ Apr 2025   Joined as an intern
+```
+
+What the job covers today:
+
+- Organic social across LinkedIn, X, Instagram and Reddit
+- Personal branding and podcast outreach for Lyzr's leadership
+- Creator and influencer partnerships, including the Architect campaign
+- Generative engine optimisation
+- Hiring and running a team of interns
+
+<br>
+
+<a id="decodedbyprince"></a>
+
+## 03 &nbsp; decodedbyprince
+
+A documentary channel on archaeology, mythology and sacred places, made with the content engine above. Find it on [Instagram](https://instagram.com/decodedbyprince).
+
+<details>
+<summary><b>Recent stories</b></summary>
+<br>
+
+| Story | Where |
+| :-- | :-- |
+| **Göbekli Tepe** | Şanlıurfa, Türkiye |
+| **Roopkund**, the skeleton lake | Uttarakhand, India |
+| **Kailasa Temple**, cut from one rock | Ellora, India |
+| **Derinkuyu**, the underground city | Cappadocia, Türkiye |
+| **Sigiriya**, the lion rock | Central Province, Sri Lanka |
 
 </details>
 
----
+<br>
 
-## 💻 Code I ship
+<a id="code"></a>
+
+## 04 &nbsp; Code I ship
 
 | Build | What it is | Stack |
 | :-- | :-- | :-- |
-| [**hiiprince.com**](https://hiiprince.com) | My portfolio site | ![Next.js](https://img.shields.io/badge/Next.js-1f2120?logo=nextdotjs&logoColor=c4ff1a) |
-| [**voicemind-public**](https://github.com/pr1ncegupta/voicemind-public) | A voice-first AI mental health companion with emotion fusion, crisis detection and an offline coping engine | ![Flutter](https://img.shields.io/badge/Flutter-1f2120?logo=flutter&logoColor=c4ff1a) ![FastAPI](https://img.shields.io/badge/FastAPI-1f2120?logo=fastapi&logoColor=c4ff1a) |
-| [**deforestation-ml**](https://github.com/pr1ncegupta/deforestation-ml) | Deforestation monitoring from satellite imagery, with a Streamlit front end | ![Python](https://img.shields.io/badge/Python-1f2120?logo=python&logoColor=c4ff1a) |
-| [**ai-bharat-teacherOS**](https://github.com/pr1ncegupta/ai-bharat-teacherOS) | Classroom management tools for rural teachers | ![AI](https://img.shields.io/badge/AI-1f2120) |
-| **Cobra** | A scorekeeper for the Cobra card game | ![React](https://img.shields.io/badge/React-1f2120?logo=react&logoColor=c4ff1a) |
+| [**hiiprince.com**](https://hiiprince.com) | My portfolio site | `Next.js` |
+| [**voicemind-public**](https://github.com/pr1ncegupta/voicemind-public) | A voice-first AI mental health companion with emotion fusion, crisis detection and an offline coping engine | `Flutter` `FastAPI` |
+| [**deforestation-ml**](https://github.com/pr1ncegupta/deforestation-ml) | Deforestation monitoring from satellite imagery, with a Streamlit front end | `Python` |
+| [**ai-bharat-teacherOS**](https://github.com/pr1ncegupta/ai-bharat-teacherOS) | Classroom management tools for rural teachers | `AI` |
+| **Cobra** | A scorekeeper for the Cobra card game | `React` |
 
----
+**Stack by job**
 
-## 🧰 Tools
-
-<table>
-  <tr>
-    <td><b>Code</b></td>
-    <td><img src="https://skillicons.dev/icons?i=ts,nextjs,react,tailwind,py,fastapi&perline=6" alt="TypeScript, Next.js, React, Tailwind, Python, FastAPI"></td>
-  </tr>
-  <tr>
-    <td><b>AI and ops</b></td>
-    <td>
-      <img src="https://img.shields.io/badge/Claude-1f2120?style=for-the-badge&logo=claude&logoColor=c4ff1a" alt="Claude">
-      <img src="https://img.shields.io/badge/Notion-1f2120?style=for-the-badge&logo=notion&logoColor=c4ff1a" alt="Notion">
-      <img src="https://img.shields.io/badge/Slack-1f2120?style=for-the-badge" alt="Slack">
-    </td>
-  </tr>
-  <tr>
-    <td><b>Design and video</b></td>
-    <td>
-      <img src="https://img.shields.io/badge/Figma-1f2120?style=for-the-badge&logo=figma&logoColor=c4ff1a" alt="Figma">
-      <img src="https://img.shields.io/badge/Final_Cut_Pro-1f2120?style=for-the-badge" alt="Final Cut Pro">
-    </td>
-  </tr>
-</table>
-
----
-
-## 📈 On GitHub
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=pr1ncegupta&hide_border=true&background=1f2120&ring=c4ff1a&fire=c4ff1a&currStreakNum=ffffff&sideNums=ffffff&currStreakLabel=c4ff1a&sideLabels=e4e7e5&dates=acafad&stroke=414342">
-  <img src="https://streak-stats.demolab.com?user=pr1ncegupta&background=ffffff&border=e4e7e5&ring=1f2120&fire=1f2120&currStreakNum=1f2120&sideNums=1f2120&currStreakLabel=1f2120&sideLabels=545655&dates=707271&stroke=e4e7e5" alt="GitHub contribution streak for pr1ncegupta">
-</picture>
-
-<br><br>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pr1ncegupta/pr1ncegupta/output/snake-dark.svg">
-  <img src="https://raw.githubusercontent.com/pr1ncegupta/pr1ncegupta/output/snake-light.svg" width="100%" alt="A snake eating my GitHub contribution graph">
-</picture>
-
-</div>
-
----
-
-## 📬 Find me
-
-<div align="center">
-
-**Partnerships, podcasts, or a creator collab with Lyzr?** <kbd>LinkedIn</kbd> is fastest.
-
-[LinkedIn](https://linkedin.com/in/pr1ncegupta) &nbsp;·&nbsp; [X](https://x.com/pr1ncegupta) &nbsp;·&nbsp; [Instagram](https://instagram.com/decodedbyprince) &nbsp;·&nbsp; [hiiprince.com](https://hiiprince.com)
+| Job | Tools |
+| :-- | :-- |
+| Build | `TypeScript` `Next.js` `React` `Tailwind` `Python` `FastAPI` |
+| Automate | `Claude` `Notion` `Slack` |
+| Make | `Figma` `Final Cut Pro` |
 
 <br>
 
-<img src="https://komarev.com/ghpvc/?username=pr1ncegupta&color=1f2120&style=flat-square&label=profile+views" alt="Profile views">
+<a id="commits"></a>
 
-</div>
+## 05 &nbsp; Commit log
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/contributions-dark.svg">
+  <img src="assets/contributions-light.svg" width="100%" alt="GitHub contributions for pr1ncegupta over the last year, with the busiest week highlighted. The chart rebuilds every day.">
+</picture>
+
+<br>
+
+## Find me
+
+[LinkedIn](https://linkedin.com/in/pr1ncegupta) &nbsp;·&nbsp; [X](https://x.com/pr1ncegupta) &nbsp;·&nbsp; [Instagram](https://instagram.com/decodedbyprince) &nbsp;·&nbsp; [hiiprince.com](https://hiiprince.com)
+
+Partnerships, podcasts or a creator collab with Lyzr: LinkedIn is fastest. Good openers are Göbekli Tepe, hook scoring, or getting an LLM to cite your brand.
+
+<a id="colophon"></a>
+
+<details>
+<summary><b>Colophon</b></summary>
+<br>
+
+Set in Google Sans Flex for anything you glance at and Literata for anything you read. The palette is Carbon Black and White with one chartreuse signal, and Digital Blue for data.
+
+Every image on this page is an SVG with its text outlined to paths, so it looks the same on every screen. [`build_assets.py`](build_assets.py) draws them, and a [GitHub Action](.github/workflows/assets.yml) redraws the commit chart every night from the contribution calendar.
+
+</details>
 
 [^geo]: Generative engine optimisation is the search-engine-optimisation idea applied to LLM answers instead of search results.
