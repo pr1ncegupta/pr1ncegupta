@@ -1,6 +1,6 @@
 """Builds the README images for github.com/pr1ncegupta.
 Text is outlined to paths, so the images render the same everywhere on GitHub.
-Edit the copy below, then run: python3 build_assets.py [header|numbers|engine|contributions ...]
+Edit the copy below, then run: python3 build_assets.py [header|numbers|hits|contributions ...]
 With no arguments it builds everything. The contributions chart reads the GitHub
 contribution calendar, so it needs GITHUB_TOKEN (or a logged-in gh CLI).
 Needs: pip install fonttools brotli uharfbuzz
@@ -26,21 +26,28 @@ HANDLE = "@pr1ncegupta"
 PLACE = "Bengaluru, from Nepal"
 STATS = [
     ("9M", ["views on the", "Architect creator", "campaign at Lyzr"]),
+    ("4.2M", ["views on my", "biggest short, on", "the Rath Yatra"]),
     ("~100K", ["followers for", "decodedbyprince", "across platforms"]),
-    ("1.5 yrs", ["to build it, after", "a few channels", "that did not work"]),
 ]
-ENGINE = [["Hooks", "Score: 80+", "Script", "Anti-AI pass"],   # two rows; the last step is the chartreuse box
-          ["B-roll pack", "Packaging", "Publish"]]
-LOOP_LABEL = "Below 80 goes back for a rewrite"
+HITS = [  # decodedbyprince Shorts by views, October 2026; the first bar is the one in data-1
+    ("Jagannath Rath Yatra", 4_200_000, "4.2M"),
+    ("Raksastal, demon lake", 1_500_000, "1.5M"),
+    ("Ramayana and Gayatri", 473_000, "473K"),
+    ("Jhijhiya dance", 359_000, "359K"),
+    ("Surya Tilak", 192_000, "192K"),
+]
+HITS_HEAD = "Top five Shorts: 6.7M views"
+HITS_SUB = "decodedbyprince on YouTube, ranked by views."
+HITS_SRC = "Source: YouTube view counts, October 2026."
 
 # ---------- brand v3 role tokens ----------
 MODES = {
     "light": dict(canvas="#ffffff", surface="#f8fbf9", rule="#e4e7e5", rule_strong="#8a8d8b", ink="#1f2120",
-                  muted="#545655", subtle="#707271", accent="#c4ff1a", on_accent="#1f2120", data1="#0a70ff", diagram="#0a70ff", diagram_fill="#e3eeff",
+                  muted="#545655", subtle="#707271", accent="#c4ff1a", on_accent="#1f2120", data1="#0a70ff", data5="#d0d3d2",
                   heat=["#f1f4f3", "#d0d3d2", "#acafad", "#707271", "#1f2120"],   # grey ramp 100 to 900
                   border=True, dw=0),
     "dark":  dict(canvas="#1f2120", surface="#313332", rule="#414342", rule_strong="#8a8d8b", ink="#ffffff",
-                  muted="#e4e7e5", subtle="#acafad", accent="#c4ff1a", on_accent="#1f2120", data1="#c4ff1a", diagram="#67a1fe", diagram_fill="#012968",
+                  muted="#e4e7e5", subtle="#acafad", accent="#c4ff1a", on_accent="#1f2120", data1="#c4ff1a", data5="#545655",
                   heat=["#313332", "#545655", "#8a8d8b", "#d0d3d2", "#ffffff"],   # grey ramp 800 to 0
                   border=False, dw=-40),   # take 40 off display weights on Carbon
 }
@@ -142,43 +149,31 @@ def numbers(m):
     write("numbers", m, W, H, b, " ".join(f"{n} {' '.join(l)}." for n, l in STATS))
 
 
-def engine(m):
-    """The content pipeline as a brand diagram: diagram-fill boxes, 4 px blue lines, Publish in chartreuse."""
-    c = MODES[m]; W, P, G, BH, LW = 1200, 72, 48, 96, 4
-    BW = (W - 2*P - 3*G) / 4
-    print(f"engine-{m}")
-    check("loop label", LOOP_LABEL, 28, 400, W - 2*P)
-    rows = [150, 326]; H = rows[1] + BH + 56
+def hits(m):
+    """Bar chart of the top Shorts: grey bars with printed values, the top one in data-1."""
+    c = MODES[m]; W, P, LABEL, ROW, BAR = 1200, 72, 360, 64, 32
+    wn = 560 + c["dw"]
+    print(f"hits-{m}")
+    check("headline", HITS_HEAD, 56, wn, W - 2*P, -0.02)
+    check("subline", HITS_SUB, 28, 400, W - 2*P, 0, "serif")
+    check("source", HITS_SRC, 28, 400, W - 2*P)
+    top, x0 = 236, P + LABEL
+    room = W - P - x0 - 110   # leave space for the value after the longest bar
+    H = top + ROW * len(HITS) + 96
     b = frame(c, W, H)
-    def arrow(x, y, d):   # filled 14 px head pointing right ("r") or down ("d")
-        pts = f"{x},{y} {x-14},{y-8} {x-14},{y+8}" if d == "r" else f"{x},{y} {x-8},{y-14} {x+8},{y-14}"
-        return f'<polygon points="{pts}" fill="{c["diagram"]}"/>'
-    def line(x1, y1, x2, y2):
-        return f'<line x1="{x1:.0f}" y1="{y1:.0f}" x2="{x2:.0f}" y2="{y2:.0f}" stroke="{c["diagram"]}" stroke-width="{LW}" stroke-linecap="square"/>'
-    box = {}
-    for r, steps in enumerate(ENGINE):
-        for i, label in enumerate(steps):
-            x, y = P + i * (BW + G), rows[r]; box[(r, i)] = (x, y)
-            last = r == len(ENGINE) - 1 and i == len(steps) - 1
-            check(f"box '{label}'", label, 28, 400, BW - 32)
-            b.append(f'<rect x="{x:.0f}" y="{y}" width="{BW:.0f}" height="{BH}" fill="{c["accent"] if last else c["diagram_fill"]}"/>')
-            b.append(path(label, 28, 400, x + 16, y + BH/2 + 10, c["on_accent"] if last else c["ink"]))
-            if i:   # arrow from the previous box
-                b.append(line(x - G + 2, y + BH/2, x - 6, y + BH/2)); b.append(arrow(x, y + BH/2, "r"))
-    # the loop: from the scorer back up and over to hooks
-    (x1, y1), (x2, _) = box[(0, 0)], box[(0, 1)]
-    top = y1 - 32
-    b.append(line(x2 + BW/2, y1 - 2, x2 + BW/2, top)); b.append(line(x2 + BW/2, top, x1 + BW/2, top))
-    b.append(line(x1 + BW/2, top, x1 + BW/2, y1 - 14)); b.append(arrow(x1 + BW/2, y1, "d"))
-    b.append(path(LOOP_LABEL, 28, 400, x1 + BW/2 + 16, top - 16, c["muted"]))
-    # row break: down from the last box of row one, across, and into the first box of row two
-    (xa, ya), (xb, yb) = box[(0, 3)], box[(1, 0)]
-    mid = ya + BH + (yb - ya - BH) / 2
-    b.append(line(xa + BW/2, ya + BH + 2, xa + BW/2, mid)); b.append(line(xa + BW/2, mid, xb + BW/2, mid))
-    b.append(line(xb + BW/2, mid, xb + BW/2, yb - 14)); b.append(arrow(xb + BW/2, yb, "d"))
-    alt = ("The content engine: " + ", then ".join(s for row in ENGINE for s in row) +
-           ". Hooks that score below 80 go back for a rewrite.")
-    write("engine", m, W, H, b, alt)
+    b.append(path(HITS_HEAD, 56, wn, P, 128, c["ink"], -0.02))
+    b.append(path(HITS_SUB, 28, 400, P, 180, c["muted"], family="serif"))
+    peak = max(v for _, v, _ in HITS)
+    for i, (label, views, shown) in enumerate(HITS):
+        y = top + i * ROW
+        check(f"label '{label}'", label, 28, 400, LABEL - 24)
+        bw = max(4, room * views / peak)
+        b.append(path(label, 28, 400, P, y + BAR/2 + 10, c["ink"]))
+        b.append(f'<rect x="{x0}" y="{y}" width="{bw:.0f}" height="{BAR}" fill="{c["data1"] if i == 0 else c["data5"]}"/>')
+        b.append(path(shown, 28, 540 + c["dw"], x0 + bw + 14, y + BAR/2 + 10, c["ink"]))
+    b.append(path(HITS_SRC, 28, 400, P, H - 48, c["subtle"]))
+    alt = f"{HITS_HEAD}. " + ". ".join(f"{l}: {s} views" for l, _, s in HITS) + "."
+    write("hits", m, W, H, b, alt)
 
 # ---------- contributions ----------
 LEVELS = {"NONE": 0, "FIRST_QUARTILE": 1, "SECOND_QUARTILE": 2, "THIRD_QUARTILE": 3, "FOURTH_QUARTILE": 4}
@@ -265,7 +260,7 @@ def contributions(m, cal):
     write("contributions", m, W, H, b, alt)
 
 if __name__ == "__main__":
-    jobs = sys.argv[1:] or ["header", "numbers", "engine", "contributions"]
+    jobs = sys.argv[1:] or ["header", "numbers", "hits", "contributions"]
     cal = calendar() if "contributions" in jobs else None
     for m in MODES:
         for j in jobs:

@@ -5,111 +5,61 @@
   <img src="assets/header-light.svg" width="100%" alt="Prince Gupta. I lead social and partnerships at Lyzr AI, and I build the systems that run it. Bengaluru, from Nepal.">
 </picture>
 
-Most hooks get picked on gut feeling. Mine get a score out of 100 first, and anything under 80 goes back for a rewrite.
+<p align="center">
+  <a href="https://linkedin.com/in/pr1ncegupta">LinkedIn</a> &nbsp;·&nbsp;
+  <a href="https://x.com/pr1ncegupta">X</a> &nbsp;·&nbsp;
+  <a href="https://instagram.com/decodedbyprince">Instagram</a> &nbsp;·&nbsp;
+  <a href="https://youtube.com/@decodedbyprince">YouTube</a> &nbsp;·&nbsp;
+  <a href="https://hiiprince.com">hiiprince.com</a>
+</p>
 
-That is the whole idea of this page. My day job is social and partnerships at [Lyzr AI](https://www.lyzr.ai), where we build agentic systems for enterprises. My night job is [decodedbyprince](https://instagram.com/decodedbyprince), a documentary channel on archaeology and myth. I studied computer science engineering, so when a task repeats, I write the tool. Below is what those tools taught me, free to steal.
+Creative strategist at [Lyzr AI](https://www.lyzr.ai). By day I run social and creator partnerships for a company that builds agentic systems for enterprises. By night I make short documentaries about temples, lakes and myths as [decodedbyprince](https://youtube.com/@decodedbyprince), for close to 100K people.
+
+Computer science engineer by degree, marketer by trade. So when the work starts repeating itself, I build the tool that takes the repetition away.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/numbers-dark.svg">
-  <img src="assets/numbers-light.svg" width="100%" alt="9M views on the Architect creator campaign at Lyzr. Close to 100K followers for decodedbyprince across platforms. 1.5 years to build it, after a few channels that did not work.">
+  <img src="assets/numbers-light.svg" width="100%" alt="9M views on the Architect creator campaign at Lyzr. 4.2M views on my biggest short, on the Rath Yatra. Close to 100K followers for decodedbyprince across platforms.">
 </picture>
 
-## Quick game: which hook ships?
+- **9M views** on the Architect creator campaign at Lyzr
+- **300K+ impressions** on LinkedIn posts I wrote
+- **Former GDSC Lead** at Jain University, featured by Google for Developers
 
-Same video. Two openers. One of them goes out.
+## decodedbyprince
 
-> **A.** America almost put a turkey on its Great Seal.
->
-> **B.** Ben Franklin called the bald eagle a thief and a coward. In writing.
-
-<details>
-<summary><b>Pick one, then click</b></summary>
-<br>
-
-**B ships, with 86 out of 100.** Nobody expects a Founding Father to trash the national bird, it reads fine on mute, and "in writing" tells you there are receipts.
-
-**A never gets scored.** It states a myth as a fact, and the video spends a minute proving it wrong. A hook that lies fails the honesty gate, and no score saves it.
-
-Want A to work? Frame the myth as a belief: *"Everyone thinks Franklin wanted a turkey on the seal. He actually called the eagle a coward."* That clears 80.
-
-</details>
-
-## Steal my hook rubric
-
-I call it the Thumb-Stop Score. A hook has two jobs: stop the scroll, then make them stay.
-
-| Job | What I check | Points |
-| :-- | :-- | --: |
-| **Stop** | Pattern break: does it say something they did not see coming? | 25 |
-| | Clarity on mute: one read, sound off, about 12 words | 15 |
-| | Sharpness: one real number, name or image | 10 |
-| **Stay** | Curiosity gap: a question the brain needs closed | 30 |
-| | Stakes: surprise, tension, or "this is about me" | 20 |
-| **Gate** | Honesty: can the video actually pay this off? | pass or fail |
-
-The part most people miss: a hook that is good at everything lands around 80, right on the cutoff. Good is not enough. At least one part has to be great.
-
-## Words that never make it out
-
-Every script, caption and post goes through an anti-AI pass before it ships. These words do not survive it:
-
-~~delve~~ &nbsp; ~~tapestry~~ &nbsp; ~~testament~~ &nbsp; ~~leverage~~ &nbsp; ~~robust~~ &nbsp; ~~seamless~~ &nbsp; ~~pivotal~~ &nbsp; ~~vibrant~~ &nbsp; ~~game-changer~~ &nbsp; ~~deep dive~~
-
-Neither does "it's not X, it's Y", the loudest tell of all. The 2026 tells are sneakier, because they sound plain: *quietly*, *steady*, *practical*, and "this matters". If your copy reads like a press release with good posture, start there.
-
-## How a video gets made
-
-One episode, seven steps, and most of them run on Claude skills I wrote. Each step's output is the next step's input.
+It took a few channels that did not work, and a year and a half, to find this one. These five Shorts did the most.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/engine-dark.svg">
-  <img src="assets/engine-light.svg" width="100%" alt="The content engine: Hooks, then Score: 80+, then Script, then Anti-AI pass, then B-roll pack, then Packaging, then Publish. Hooks that score below 80 go back for a rewrite.">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/hits-dark.svg">
+  <img src="assets/hits-light.svg" width="100%" alt="Top five decodedbyprince Shorts add up to 6.7M views. Jagannath Rath Yatra 4.2M, Raksastal demon lake 1.5M, Ramayana and Gayatri Mantra 473K, Jhijhiya dance 359K, Surya Tilak 192K.">
 </picture>
 
-<details>
-<summary><b>What each step does</b></summary>
-<br>
-
-| Step | What happens |
-| :-- | :-- |
-| Hooks | A pool of 6 to 10 openers, each from a different angle |
-| Score | The rubric above. Under 80 or dishonest, it goes back |
-| Script | A one-minute, talking-to-camera script built on the winning hook |
-| Anti-AI pass | The word list above, plus rhythm: no page of clipped, same-length sentences |
-| B-roll pack | A shot list for the editor, with a source for every line |
-| Packaging | Thumbnail text, title, tags and description in one go |
-
-</details>
+Watch them: [Jagannath Rath Yatra](https://youtube.com/shorts/amIcr0F6trA) &nbsp;·&nbsp; [The Demonic Lake Raksastal](https://youtube.com/shorts/CGcfzZsxB-4) &nbsp;·&nbsp; [Ramayana and the Gayatri Mantra](https://youtube.com/shorts/472aZWHc_Yk) &nbsp;·&nbsp; [The Jhijhiya Dance of Mithila](https://youtube.com/shorts/-SRdDCJpRhw) &nbsp;·&nbsp; [Surya Tilak of Ram Lalla](https://youtube.com/shorts/15Hqeejqly0)
 
 ## At Lyzr
 
-Joined as an intern in April 2025, full time since January 2026. Three things I would show anyone:
+Joined as an intern in April 2025, and went full time in January 2026. These days I look after organic social across LinkedIn, X, Instagram and Reddit, our creator and influencer partnerships, and how AI assistants like ChatGPT talk about Lyzr when someone asks. I also hire and run our intern team.
 
-- **The Architect campaign.** A creator campaign that reached 9M views.
-- **Getting AI to talk about us.** People ask ChatGPT before they search now. I track how LLMs cite Lyzr in their answers and feed what I find into what we publish. The name for it is generative engine optimisation.
-- **[TL;DR](https://github.com/pr1ncegupta/TLDR-P).** Paste any text, get a summary and action points from four agents running on Lyzr. A demo that doubles as working software. [Try it](https://tldr-p.vercel.app).
+## Things I have built
 
-## Side quests
-
-Code I wrote for fun, or for a deadline.
-
-| Repo | What it does |
+| | |
 | :-- | :-- |
-| [hiiprince.com](https://hiiprince.com) | My portfolio, in Next.js |
-| [voicemind-public](https://github.com/pr1ncegupta/voicemind-public) | A voice-first mental health companion, in Flutter and FastAPI |
-| [deforestation-ml](https://github.com/pr1ncegupta/deforestation-ml) | Spots deforestation in satellite images, with a Streamlit front end |
+| [**TL;DR**](https://tldr-p.vercel.app) | Paste any text, get the summary and the action points. Four AI agents on Lyzr do the work. |
+| **My content engine** | A set of Claude skills that takes a decodedbyprince episode from first hook to upload. |
+| [**hiiprince.com**](https://hiiprince.com) | My corner of the internet, built in Next.js. |
+| [**VoiceMind**](https://github.com/pr1ncegupta/voicemind-public) | A voice-first mental health companion, in Flutter and FastAPI. |
+| [**deforestation-ml**](https://github.com/pr1ncegupta/deforestation-ml) | Spots deforestation in satellite images. |
 
-## Receipts
-
-The commit chart below redraws itself every night, using the same script that draws every image on this page.
+## On GitHub
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/contributions-dark.svg">
   <img src="assets/contributions-light.svg" width="100%" alt="GitHub contributions for pr1ncegupta over the last year, with the busiest week highlighted. The chart rebuilds every day.">
 </picture>
 
-## Send me a hook
+## Say hii
 
-Got an opener you are unsure about? Send it on [LinkedIn](https://linkedin.com/in/pr1ncegupta) or [X](https://x.com/pr1ncegupta) and I will run it through the rubric. Or ask me about Göbekli Tepe. Either works.
+Partnerships, podcasts and creator collabs: [LinkedIn](https://linkedin.com/in/pr1ncegupta) is the fastest way to reach me.
 
-[LinkedIn](https://linkedin.com/in/pr1ncegupta) &nbsp;·&nbsp; [X](https://x.com/pr1ncegupta) &nbsp;·&nbsp; [Instagram](https://instagram.com/decodedbyprince) &nbsp;·&nbsp; [hiiprince.com](https://hiiprince.com)
+And if we ever meet, ask me about [Kukur Tihar](https://youtube.com/shorts/Euwf8CR7tlg), the day Nepal worships dogs. I will not stop talking.
