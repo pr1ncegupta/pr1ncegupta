@@ -34,15 +34,18 @@ QUOTE = [  # (text, highlighted) runs per line; the highlight is the quote's one
     [("When the content work starts repeating itself,", False)],
     [("I write ", False), ("the tool that takes the repetition away.", True)],
 ]
+ENGINE = [["Hooks", "Score: 80+", "Script", "Anti-AI pass"],   # two rows; the last step is the chartreuse box
+          ["B-roll pack", "Packaging", "Publish"]]
+LOOP_LABEL = "Below 80 goes back for a rewrite"
 
 # ---------- brand v3 role tokens ----------
 MODES = {
     "light": dict(canvas="#ffffff", surface="#f8fbf9", rule="#e4e7e5", rule_strong="#8a8d8b", ink="#1f2120",
-                  muted="#545655", subtle="#707271", accent="#c4ff1a", on_accent="#1f2120", data1="#0a70ff",
+                  muted="#545655", subtle="#707271", accent="#c4ff1a", on_accent="#1f2120", data1="#0a70ff", diagram="#0a70ff", diagram_fill="#e3eeff",
                   heat=["#f1f4f3", "#d0d3d2", "#acafad", "#707271", "#1f2120"],   # grey ramp 100 to 900
                   border=True, dw=0),
     "dark":  dict(canvas="#1f2120", surface="#313332", rule="#414342", rule_strong="#8a8d8b", ink="#ffffff",
-                  muted="#e4e7e5", subtle="#acafad", accent="#c4ff1a", on_accent="#1f2120", data1="#c4ff1a",
+                  muted="#e4e7e5", subtle="#acafad", accent="#c4ff1a", on_accent="#1f2120", data1="#c4ff1a", diagram="#67a1fe", diagram_fill="#012968",
                   heat=["#313332", "#545655", "#8a8d8b", "#d0d3d2", "#ffffff"],   # grey ramp 800 to 0
                   border=False, dw=-40),   # take 40 off display weights on Carbon
 }
@@ -165,6 +168,44 @@ def quote(m):
                 x += w
     write("quote", m, W, H, b, " ".join(t for runs in QUOTE for t, _ in runs))
 
+def engine(m):
+    """The content pipeline as a brand diagram: diagram-fill boxes, 4 px blue lines, Publish in chartreuse."""
+    c = MODES[m]; W, P, G, BH, LW = 1200, 72, 48, 96, 4
+    BW = (W - 2*P - 3*G) / 4
+    print(f"engine-{m}")
+    check("loop label", LOOP_LABEL, 28, 400, W - 2*P)
+    rows = [150, 326]; H = rows[1] + BH + 56
+    b = frame(c, W, H)
+    def arrow(x, y, d):   # filled 14 px head pointing right ("r") or down ("d")
+        pts = f"{x},{y} {x-14},{y-8} {x-14},{y+8}" if d == "r" else f"{x},{y} {x-8},{y-14} {x+8},{y-14}"
+        return f'<polygon points="{pts}" fill="{c["diagram"]}"/>'
+    def line(x1, y1, x2, y2):
+        return f'<line x1="{x1:.0f}" y1="{y1:.0f}" x2="{x2:.0f}" y2="{y2:.0f}" stroke="{c["diagram"]}" stroke-width="{LW}" stroke-linecap="square"/>'
+    box = {}
+    for r, steps in enumerate(ENGINE):
+        for i, label in enumerate(steps):
+            x, y = P + i * (BW + G), rows[r]; box[(r, i)] = (x, y)
+            last = r == len(ENGINE) - 1 and i == len(steps) - 1
+            check(f"box '{label}'", label, 28, 400, BW - 32)
+            b.append(f'<rect x="{x:.0f}" y="{y}" width="{BW:.0f}" height="{BH}" fill="{c["accent"] if last else c["diagram_fill"]}"/>')
+            b.append(path(label, 28, 400, x + 16, y + BH/2 + 10, c["on_accent"] if last else c["ink"]))
+            if i:   # arrow from the previous box
+                b.append(line(x - G + 2, y + BH/2, x - 6, y + BH/2)); b.append(arrow(x, y + BH/2, "r"))
+    # the loop: from the scorer back up and over to hooks
+    (x1, y1), (x2, _) = box[(0, 0)], box[(0, 1)]
+    top = y1 - 32
+    b.append(line(x2 + BW/2, y1 - 2, x2 + BW/2, top)); b.append(line(x2 + BW/2, top, x1 + BW/2, top))
+    b.append(line(x1 + BW/2, top, x1 + BW/2, y1 - 14)); b.append(arrow(x1 + BW/2, y1, "d"))
+    b.append(path(LOOP_LABEL, 28, 400, x1 + BW/2 + 16, top - 16, c["muted"]))
+    # row break: down from the last box of row one, across, and into the first box of row two
+    (xa, ya), (xb, yb) = box[(0, 3)], box[(1, 0)]
+    mid = ya + BH + (yb - ya - BH) / 2
+    b.append(line(xa + BW/2, ya + BH + 2, xa + BW/2, mid)); b.append(line(xa + BW/2, mid, xb + BW/2, mid))
+    b.append(line(xb + BW/2, mid, xb + BW/2, yb - 14)); b.append(arrow(xb + BW/2, yb, "d"))
+    alt = ("The content engine: " + ", then ".join(s for row in ENGINE for s in row) +
+           ". Hooks that score below 80 go back for a rewrite.")
+    write("engine", m, W, H, b, alt)
+
 # ---------- contributions ----------
 LEVELS = {"NONE": 0, "FIRST_QUARTILE": 1, "SECOND_QUARTILE": 2, "THIRD_QUARTILE": 3, "FOURTH_QUARTILE": 4}
 
@@ -250,7 +291,7 @@ def contributions(m, cal):
     write("contributions", m, W, H, b, alt)
 
 if __name__ == "__main__":
-    jobs = sys.argv[1:] or ["header", "numbers", "quote", "contributions"]
+    jobs = sys.argv[1:] or ["header", "numbers", "quote", "engine", "contributions"]
     cal = calendar() if "contributions" in jobs else None
     for m in MODES:
         for j in jobs:

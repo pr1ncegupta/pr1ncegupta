@@ -53,20 +53,10 @@ Five things I built. Each one is written up the same way: the brief, what I buil
 **Built.** A chain of Claude skills, one per stage, where each skill's output is the next one's input. Hooks get scored on a fixed rubric, and only the ones above 80 move on.<br>
 **Result.** [decodedbyprince](https://instagram.com/decodedbyprince) at close to 100K followers across platforms in 1.5 years.
 
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#e3eeff", "primaryTextColor": "#1f2120", "primaryBorderColor": "#0a70ff", "lineColor": "#0a70ff", "edgeLabelBackground": "#e3eeff", "fontFamily": "Google Sans Flex, Helvetica Neue, Arial, sans-serif"}}}%%
-flowchart LR
-    A[hook-writer] --> B{hook-scorer}
-    B -- 80 and up --> C[script-writer]
-    B -. below 80 .-> A
-    C --> D[anti-ai-writing]
-    D --> E[broll-sourcer]
-    E --> F[youtube-packaging]
-    F --> G[Publish]
-
-    classDef ship fill:#c4ff1a,stroke:#1f2120,stroke-width:2px,color:#1f2120
-    class G ship
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/engine-dark.svg">
+  <img src="assets/engine-light.svg" width="100%" alt="The content engine: Hooks, then Score: 80+, then Script, then Anti-AI pass, then B-roll pack, then Packaging, then Publish. Hooks that score below 80 go back for a rewrite.">
+</picture>
 
 <details>
 <summary><b>Every skill in the engine</b></summary>
