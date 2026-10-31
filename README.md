@@ -39,7 +39,7 @@ Watch them: [Jagannath Rath Yatra](https://youtube.com/shorts/amIcr0F6trA) &nbsp
 
 ## At Lyzr
 
-Joined as an intern in April 2025, and went full time in January 2026. These days I look after organic social across LinkedIn, X, Instagram and Reddit, our creator and influencer partnerships, and how AI assistants like ChatGPT talk about Lyzr when someone asks. I also hire and run our intern team.
+Joined as an intern in April 2025, and went full time in January 2026. Since then I have grown Lyzr's social following from **25K to 50K+**. These days I look after organic social across LinkedIn, X, Instagram and Reddit, our creator and influencer partnerships, and how AI assistants like ChatGPT talk about Lyzr when someone asks. I also hire and run our intern team.
 
 ## Things I have built
 
