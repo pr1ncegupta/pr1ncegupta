@@ -22,7 +22,7 @@ Computer science engineer by degree, marketer by trade. So when the work starts 
   <img src="assets/numbers-light.svg" width="100%" alt="9M views on the Architect creator campaign at Lyzr. 4.2M views on my biggest short, on the Rath Yatra. Close to 100K followers for decodedbyprince across platforms.">
 </picture>
 
-- **9M views** on the Architect creator campaign at Lyzr
+- **9M views from 1,000 creator videos** on Lyzr's Architect campaign, across LinkedIn, X, Instagram and TikTok in 3 months. I ran it end to end, with creators directly and through agencies.
 - **300K+ impressions** on LinkedIn posts I wrote
 - **Former GDSC Lead** at Jain University, featured by Google for Developers
 
