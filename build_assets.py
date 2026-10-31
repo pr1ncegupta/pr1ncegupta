@@ -1,6 +1,6 @@
 """Builds the README images for github.com/pr1ncegupta.
 Text is outlined to paths, so the images render the same everywhere on GitHub.
-Edit the copy below, then run: python3 build_assets.py [header|numbers|quote|contributions ...]
+Edit the copy below, then run: python3 build_assets.py [header|numbers|engine|contributions ...]
 With no arguments it builds everything. The contributions chart reads the GitHub
 contribution calendar, so it needs GITHUB_TOKEN (or a logged-in gh CLI).
 Needs: pip install fonttools brotli uharfbuzz
@@ -15,8 +15,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 FONTS = {
     "sans": "fonts/GoogleSansFlex-Variable.woff2",       # anything glanced at
     "serif": "fonts/Literata-Variable.woff2",            # anything read
-    "italic": "fonts/Literata-Italic-Variable.woff2",    # the one pull quote
-}
+    }
 
 # ---------- copy ----------
 USER = "pr1ncegupta"
@@ -29,10 +28,6 @@ STATS = [
     ("9M", ["views on the", "Architect creator", "campaign at Lyzr"]),
     ("~100K", ["followers for", "decodedbyprince", "across platforms"]),
     ("1.5 yrs", ["to build it, after", "a few channels", "that did not work"]),
-]
-QUOTE = [  # (text, highlighted) runs per line; the highlight is the quote's one chartreuse element
-    [("When the content work starts repeating itself,", False)],
-    [("I write ", False), ("the tool that takes the repetition away.", True)],
 ]
 ENGINE = [["Hooks", "Score: 80+", "Script", "Anti-AI pass"],   # two rows; the last step is the chartreuse box
           ["B-roll pack", "Packaging", "Publish"]]
@@ -146,27 +141,6 @@ def numbers(m):
             b.append(path(ln, 28, 400, x + PAD, 164 + j*38, c["muted"]))
     write("numbers", m, W, H, b, " ".join(f"{n} {' '.join(l)}." for n, l in STATS))
 
-def quote(m):
-    """The one pull quote: Literata Italic, with the highlight box on the payoff."""
-    c = MODES[m]; W, P, SIZE, LH, PADX = 1200, 72, 46, 72, 14
-    print(f"quote-{m}")
-    H = 2 * 64 + LH * len(QUOTE)
-    b = frame(c, W, H)
-    for i, runs in enumerate(QUOTE):
-        base = 64 + 52 + i * LH
-        check(f"quote line {i+1}", "".join(t for t, _ in runs), SIZE, 400, W - 2*P - 2*PADX, -0.01, "italic")
-        x = P
-        for text, hi in runs:
-            w = width(text, SIZE, 400, -0.01, "italic")
-            if hi:   # leave a few px between the previous word and the box
-                x += PADX - 6
-                b.append(f'<rect x="{x - PADX:.0f}" y="{base-44}" width="{w + 2*PADX:.0f}" height="62" fill="{c["accent"]}"/>')
-                b.append(path(text, SIZE, 400, x, base, c["on_accent"], -0.01, family="italic"))
-                x += w
-            else:
-                b.append(path(text, SIZE, 400, x, base, c["ink"], -0.01, family="italic"))
-                x += w
-    write("quote", m, W, H, b, " ".join(t for runs in QUOTE for t, _ in runs))
 
 def engine(m):
     """The content pipeline as a brand diagram: diagram-fill boxes, 4 px blue lines, Publish in chartreuse."""
@@ -291,7 +265,7 @@ def contributions(m, cal):
     write("contributions", m, W, H, b, alt)
 
 if __name__ == "__main__":
-    jobs = sys.argv[1:] or ["header", "numbers", "quote", "engine", "contributions"]
+    jobs = sys.argv[1:] or ["header", "numbers", "engine", "contributions"]
     cal = calendar() if "contributions" in jobs else None
     for m in MODES:
         for j in jobs:
